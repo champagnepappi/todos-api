@@ -8,5 +8,10 @@ RSpec.describe 'Todos API', type: :request do
   #Test suite for GET /todos
   describe 'GET /todos' do
     before { get '/todos' }
+
+    it 'returns todos' do
+      expect(json).not_to be_empty
+      expect(json.size).to eq(10)
+    end
   end
 end
