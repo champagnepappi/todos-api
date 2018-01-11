@@ -57,6 +57,10 @@ RSpec.describe 'Todos API', type: :request do
       it 'creates a todo' do
         expect(json['title']).to eq('Learn Js')
       end
+
+      it 'returns status code 201' do
+        expect(response).to have_http_status(201)
+      end
     end
   end
 end
