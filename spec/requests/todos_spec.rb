@@ -33,5 +33,9 @@ RSpec.describe 'Todos API', type: :request do
         expect(response).to have_http_status(200)
       end
     end
+
+    context 'when the record does not exist' do
+      let(:todo_id) {100}
+    end
   end
 end
