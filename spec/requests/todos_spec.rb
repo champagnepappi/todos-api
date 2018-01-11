@@ -53,6 +53,10 @@ RSpec.describe 'Todos API', type: :request do
 
     context 'when request is valid' do
       before { post '/todos', params: valid_attributes }
+
+      it 'creates a todo' do
+        expect(json['title']).to eq('Learn Js')
+      end
     end
   end
 end
