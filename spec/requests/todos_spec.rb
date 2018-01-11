@@ -46,4 +46,9 @@ RSpec.describe 'Todos API', type: :request do
       end
     end
   end
+
+  describe 'POST /todos' do
+    #valid payload
+    let(:valid_attributes) {{title: 'Learn Js', created_by: '1'}}
+  end
 end
