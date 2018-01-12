@@ -62,5 +62,9 @@ RSpec.describe 'Todos API', type: :request do
         expect(response).to have_http_status(201)
       end
     end
+
+    context 'when request is invalid' do
+      before {post '/todos', params: { title: 'Foobar' }}
+    end
   end
 end
