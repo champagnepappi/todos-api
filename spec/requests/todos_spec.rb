@@ -65,6 +65,10 @@ RSpec.describe 'Todos API', type: :request do
 
     context 'when request is invalid' do
       before {post '/todos', params: { title: 'Foobar' }}
+
+      it 'returns status code 422' do
+        expect(response).to have_http_status(422)
+      end
     end
   end
 end
