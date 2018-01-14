@@ -76,4 +76,8 @@ RSpec.describe 'Todos API', type: :request do
       end
     end
   end
+
+  describe 'PUT /todos/:id' do
+    
+  end
 end
