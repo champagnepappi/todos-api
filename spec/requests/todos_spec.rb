@@ -78,7 +78,7 @@ RSpec.describe 'Todos API', type: :request do
   end
 
   describe 'PUT /todos/:id' do
-    let(valid_attributes) {{ title: 'Shopping' }}
+    let(:valid_attributes) {{ title: 'Shopping' }}
 
     context 'when the record exists' do
       before { put "/todos/#{todo_id}", params: valid_attributes }
