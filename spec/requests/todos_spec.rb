@@ -78,6 +78,7 @@ RSpec.describe 'Todos API', type: :request do
   end
 
   describe 'PUT /todos/:id' do
+    let(valid_attributes) {{ title: 'Shopping' }}
     
   end
 end
