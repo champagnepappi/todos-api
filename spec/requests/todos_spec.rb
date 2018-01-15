@@ -93,4 +93,9 @@ RSpec.describe 'Todos API', type: :request do
     end
     
   end
+
+  #Test suite for DELETE /todos/:id
+  describe 'DELETE /todos/:id' do
+    
+  end
 end
