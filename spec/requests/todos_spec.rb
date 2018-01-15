@@ -82,6 +82,10 @@ RSpec.describe 'Todos API', type: :request do
 
     context 'when the record exists' do
       before { put "/todos/#{todo_id}", params: valid_attributes }
+
+      it 'updates the record' do
+        expect(response.body).to be_empty
+      end
     end
     
   end
