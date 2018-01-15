@@ -86,6 +86,10 @@ RSpec.describe 'Todos API', type: :request do
       it 'updates the record' do
         expect(response.body).to be_empty
       end
+
+      it 'returns status code 204' do
+        expect(response).to have_http_status(204)
+      end
     end
     
   end
