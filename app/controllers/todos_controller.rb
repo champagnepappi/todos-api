@@ -19,4 +19,10 @@ class TodosController < ApplicationController
     json_response(@todo)
   end
 
+  #PUT /todos/:id
+  def update
+    @todo.update(todo_params)
+    head :no_content
+  end
+
 end
