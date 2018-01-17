@@ -31,4 +31,11 @@ class TodosController < ApplicationController
     head :no_content
   end
 
+  private
+
+  def todo_params
+    #whitelist params
+    params.permit(:title, :created_by)
+  end
+
 end
