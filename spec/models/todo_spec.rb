@@ -7,5 +7,5 @@ RSpec.describe Todo, type: :model do
 
   #test for title and created_by presence
   it { should validate_presence_of(:title) }
-  it { should validate_presence_of(:created_at) }
+  it { should validate_presence_of(:created_by) }
 end
