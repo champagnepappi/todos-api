@@ -3,4 +3,9 @@ class TodosController < ApplicationController
 
   #GET /TODOS
 
+  def index
+    @todos = Todo.all
+    json_response(@todos)
+  end
+
 end
