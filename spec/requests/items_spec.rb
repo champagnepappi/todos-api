@@ -14,6 +14,10 @@ RSpec.describe 'Items API' do
       it 'returns status code 200' do
         expect(response).to have_http_status(200)
       end
+
+      it 'returns all todo items' do
+        expect(json.size).to eq(20)
+      end
     end
   end
 end
