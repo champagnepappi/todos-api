@@ -19,5 +19,12 @@ RSpec.describe 'Items API' do
         expect(json.size).to eq(20)
       end
     end
+
+    context 'when todo does not exist' do
+      let(:todo_id) {0}
+      it 'returns status code 404' do
+        expect(response).to have_http_status(404)
+      end
+    end
   end
 end
