@@ -22,6 +22,12 @@ class ItemsController < ApplicationController
     head :no_content
   end
 
+  #DELETE /todos/:todo_id/items/:id
+  def destroy
+    @item.destroy
+    head :no_content
+  end
+
   private
   def item_params
     params.permit(:name, :done)
