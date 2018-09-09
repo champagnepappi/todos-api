@@ -10,6 +10,12 @@ class ItemsController < ApplicationController
     json_response(@item)
   end
 
+  #GET /todos/:todo_id/items
+  def create
+    @todo.items.create!(item_params)
+    json_response(@todo, :created)
+  end
+
   private
   def item_params
     params.permit(:name, :done)
