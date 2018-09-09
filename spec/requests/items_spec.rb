@@ -27,14 +27,14 @@ RSpec.describe 'Items API' do
       end
 
       it 'returns a not found message' do
-        expect(response).to match(/Couldn't find Todo/)
+        expect(response.body).to match(/Couldn't find Todo/)
       end
     end
   end
 
   #test suite for GET /todos/:todo_id/items/:id
   describe 'GET /todos/:todo_id/items/:id' do
-    before { get "/todos/#{todo_id}/items/{#id}" }
+    before { get "/todos/#{todo_id}/items/#{id}" }
 
     context 'when todo item exists' do
       it 'returns status code 200' do
@@ -87,7 +87,7 @@ RSpec.describe 'Items API' do
   #Test suite for PUT /todos/:todo_id/items/:id
   describe 'PUT /todos/:todo_id/items/:id' do
     let(:valid_attributes) {{ name: 'Moschino' }}
-    before {put "todos/#{todo_id}/items/#{id}", params: valid_attributes}
+    before {put "/todos/#{todo_id}/items/#{id}", params: valid_attributes}
     
     context 'when item exists' do
       it 'returns status code 204' do
@@ -108,7 +108,7 @@ RSpec.describe 'Items API' do
       end
 
       it 'returns a not found message' do
-        expect(response).to match(/Couldn't find Item/)
+        expect(response.body).to match(/Couldn't find Item/)
       end
     end
   end
