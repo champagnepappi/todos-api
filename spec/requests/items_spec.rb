@@ -93,6 +93,11 @@ RSpec.describe 'Items API' do
       it 'returns status code 204' do
         expect(response).to have_http_status(204)
       end
+
+      it 'updates the item' do
+        updated_item = Item.find(id)
+        expect(updated_item.name).to match(/Moschino/)
+      end
     end
   end
 end
