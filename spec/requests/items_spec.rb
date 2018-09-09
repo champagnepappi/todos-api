@@ -83,4 +83,16 @@ RSpec.describe 'Items API' do
       end
     end
   end
+
+  #Test suite for PUT /todos/:todo_id/items/:id
+  describe 'PUT /todos/:todo_id/items/:id' do
+    let(:valid_attributes) {{ name: 'Moschino' }}
+    before {put "todos/#{todo_id}/items/#{id}", params: valid_attributes}
+    
+    context 'when item exists' do
+      it 'returns status code 204' do
+        expect(response).to have_http_status(204)
+      end
+    end
+  end
 end
