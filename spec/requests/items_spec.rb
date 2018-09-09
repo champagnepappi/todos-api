@@ -58,4 +58,17 @@ RSpec.describe 'Items API' do
       end
     end
   end
+
+  #Test suite for PUT /todos/:todo_id/items
+  describe 'POST /todos/:todo_id/items' do
+    let(:valid_attributes) {{name: 'Emmie Watson', done: false}}
+
+    context 'when requests attribute are valid' do
+      before {post "/todos/#{todo_id}/items", params: valid_attributes }
+
+      it 'returns status code 201' do
+        expect(response).to have_http_status(201)
+      end
+    end
+  end
 end
