@@ -16,6 +16,12 @@ class ItemsController < ApplicationController
     json_response(@todo, :created)
   end
 
+  #PUT /todos/:todo_id/items/:id
+  def update
+    @item.update(item_params)
+    head :no_content
+  end
+
   private
   def item_params
     params.permit(:name, :done)
