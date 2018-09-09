@@ -1,5 +1,10 @@
 class ItemsController < ApplicationController
 
+  #GET /todos/:todo_id/items
+  def index
+    json_response(@todo.items)
+  end
+
   private
   def item_params
     params.permit(:name, :done)
