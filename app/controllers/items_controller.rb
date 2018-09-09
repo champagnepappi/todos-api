@@ -5,6 +5,11 @@ class ItemsController < ApplicationController
     json_response(@todo.items)
   end
 
+  #GET /todos/:todo_id/items/:id
+  def show
+    json_response(@item)
+  end
+
   private
   def item_params
     params.permit(:name, :done)
