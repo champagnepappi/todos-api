@@ -77,6 +77,10 @@ RSpec.describe 'Items API' do
       it 'returns status code 422' do
         expect(response).to have_http_status(422)
       end
+
+      it 'returns a failure message' do
+        expect(response.body).to match(/Validation failed: Name can't be blank/)
+      end
     end
   end
 end
