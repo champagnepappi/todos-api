@@ -31,4 +31,19 @@ RSpec.describe 'Items API' do
       end
     end
   end
+
+  #test suite for GET /todos/:todo_id/items/:id
+  describe 'GET /todos/:todo_id/items/:id' do
+    before { get "/todos/#{todo_id}/items/{#id}" }
+
+    context 'when todo item exists' do
+      it 'returns status code 200' do
+        expect(response).to have_http_status(200)
+      end
+
+      it 'returns the item' do
+        expect(json['id']).to eq(id)
+      end
+    end
+  end
 end
