@@ -45,5 +45,13 @@ RSpec.describe 'Items API' do
         expect(json['id']).to eq(id)
       end
     end
+
+    context 'when todo item does not exist' do
+      let(:id) {0}
+
+      it 'returns status code 404' do
+        expect(response).to have_http_status(404)
+      end
+    end
   end
 end
