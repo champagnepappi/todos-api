@@ -10,4 +10,4 @@ RUN bundle install
 COPY . .
 
 #specify commands to run when container based on this image starts
-CMD rails server
+CMD ["rails", "server", "-b", "0.0.0.0"]
