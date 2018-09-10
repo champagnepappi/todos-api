@@ -10,3 +10,12 @@ services:
       - PG_PASSWORD=secret
       - PG_HOST=pg
       - PG_PORT=5432
+
+  pg:
+    image: postgres:10-alpine
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    environment:
+      - PG_USERNAME=postgres
+      - PG_PASSWORD=secret
+
