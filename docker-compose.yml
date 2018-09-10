@@ -1,0 +1,12 @@
+version: '3.2'
+
+services:
+  app:
+    image: kevin/todos-api
+    ports:
+      - 3000:3000
+    environment:
+      - PG_USERNAME=postgres
+      - PG_PASSWORD=secret
+      - PG_HOST=pg
+      - PG_PORT=5432
