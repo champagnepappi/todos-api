@@ -19,3 +19,5 @@ services:
       - PG_USERNAME=postgres
       - PG_PASSWORD=secret
 
+volumes:
+  pg-data:
