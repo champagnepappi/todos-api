@@ -5,4 +5,14 @@ class JsonWebToken
     payload[:exp] = exp.to_i
     JWT.encode(payload, HMAC_SECRET)
   end
+
+  def self.decode(token)
+    body= JWT.decode(token, HMAX_SECRET)[0]
+    HandWithIndifferentAccess.new body
+    #resue from all decode errors
+    rescue JWT::DecodeError => e
+      #raise custom error to be handled by custom handler
+      raise ExceptionHandler::InvalidToken, e.message
+    end
+  end
 end
