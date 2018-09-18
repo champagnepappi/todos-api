@@ -6,4 +6,11 @@ module ExceptionHandler
   end
   class InvalidToken < StandardError
   end
+
+  included do
+    rescue_from ActiveRecord::RecordInvalid, with: :fourty_twenty_two 
+    rescue_from ExceptionHandler::AuthenticationError, with: :unauthorised_request
+    rescue_from ExceptionHandler::MissingToken, with: :fourty_twenty_two
+    rescue_from ExceptionHandler::InvalidToken, with: :fourty_twenty_two
+  end
 end
