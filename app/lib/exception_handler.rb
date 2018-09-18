@@ -23,4 +23,9 @@ module ExceptionHandler
   def four_twenty_two(e)
     json_response({message: e.message}, :unprocessable_entity)
   end
+
+  #json response with message; status code 401 - unauthorised
+  def unauthorised_request(e)
+    json_response({message: e.message}, :unathorised)
+  end
 end
