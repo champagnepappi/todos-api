@@ -45,6 +45,15 @@ RSpec.describe AuthorizeAPiRequest do
           .to raise_error(ExceptionHandler::InvalidToken, /Signature has expired/)
       end 
     end
+
+    context 'fake token' do
+      let(:header) {{'Authorization' => 'foobar'}}
+      subject(:invalid_request_obj) {described_class.new(header)}
+      it 'handles JWT::DecodeError' do
+        expect {invalid_request_obj.call}.to 
+        raise_error(ExceptionHandler::InvalidToken, /Not enough or too many segments/)
+      end
+    end
   end
 
 end
