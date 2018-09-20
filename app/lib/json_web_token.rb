@@ -8,7 +8,7 @@ class JsonWebToken
 
   def self.decode(token)
     body= JWT.decode(token, HMAC_SECRET)[0]
-    HandWithIndifferentAccess.new body
+    HashWithIndifferentAccess.new body
     #resue from all decode errors
     rescue JWT::DecodeError => e
       #raise custom error to be handled by custom handler
