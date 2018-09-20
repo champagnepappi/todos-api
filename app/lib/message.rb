@@ -27,4 +27,8 @@ class Message
     'Account could not be created'
   end
 
+  def self.expired_token
+    'Sorry, your token has expired. Please login to continue'
+  end
+
 end
