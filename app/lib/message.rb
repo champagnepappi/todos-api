@@ -14,4 +14,8 @@ class Message
   def self.missing_token
     'Missing token'
   end
+
+  def self.unauthorised
+    'Unathorized request'
+  end
 end
