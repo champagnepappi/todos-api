@@ -18,4 +18,8 @@ class Message
   def self.unauthorised
     'Unathorized request'
   end
+
+  def self.account_created
+    'Account successfully created'
+  end
 end
