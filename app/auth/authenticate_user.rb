@@ -7,4 +7,8 @@ class AuthenticateUser
   def call
     JsonWebToken.encode(user_id: user.id) if user
   end
+
+  private
+   
+  attr_reader :email, :password
 end
