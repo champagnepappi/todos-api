@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSPec.describe AuthenticateUser do
+RSpec.describe AuthenticateUser do
   let(:user) { create(:user) }
   #valid request subject
   subject(:valid_auth_obj) {described_class.new(user.email, user.password)}
