@@ -14,6 +14,10 @@ RSpec.describe 'Users API', type: :request do
       it 'creates a new user' do
         expect(response).to have_http_status(201)
       end
+
+      it 'returns a success message' do
+        expect(json['message']).to match(/Account created successfully/)
+      end
     end
   end
 end
