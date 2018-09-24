@@ -18,6 +18,10 @@ RSpec.describe 'Users API', type: :request do
       it 'returns a success message' do
         expect(json['message']).to match(/Account created successfully/)
       end
+
+      it 'returns an authentication token' do
+        expect(json['auth_token']).not_to be_nil
+      end
     end
   end
 end
