@@ -23,5 +23,13 @@ RSpec.describe 'Users API', type: :request do
         expect(json['auth_token']).not_to be_nil
       end
     end
+
+    context 'when invalid request' do
+      before {post '/signup', params: {}, headers: headers}
+
+      it 'does not create a new user' do
+        expect(response).to have_http_status(422)
+      end
+    end
   end
 end
