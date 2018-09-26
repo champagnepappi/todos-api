@@ -30,6 +30,10 @@ RSpec.describe 'Users API', type: :request do
       it 'does not create a new user' do
         expect(response).to have_http_status(422)
       end
+
+      it 'returns a failure message' do
+        expect(json['message']).to match(/Validation failed: Password can't be blank/)
+      end
     end
   end
 end
