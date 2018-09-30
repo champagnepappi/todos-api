@@ -52,7 +52,7 @@ RSpec.describe 'Todos API', type: :request do
 
   describe 'POST /todos' do
     #valid payload
-    let(:valid_attributes) {{title: 'Learn Js', created_by: '1'}}
+    let(:valid_attributes) {{title: 'Learn Js', created_by: user.id.to_s}.to_json}
 
     context 'when request is valid' do
       before { post '/todos', params: valid_attributes }
