@@ -3,10 +3,11 @@ require 'rails_helper'
 RSpec.describe 'Items API' do
   #initialize the test data
   let(:user) {create(:user)}
-  let!(:todo) {create(:todo)}
+  let!(:todo) {create(:todo, created_by: user.id)}
   let!(:items) {create_list(:item, 20, todo_id: todo.id)}
   let!(:todo_id) {todo.id}
   let(:id) {items.first.id}
+  let(:headers) { valid_headers }
 
   #Test suite for GET /todos/:todo_id/items
   describe 'GET /todos/:todo_id/items' do
