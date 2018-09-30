@@ -4,7 +4,7 @@ class TodosController < ApplicationController
   #GET /TODOS
 
   def index
-    @todos = Todo.all
+    @todos = current_user.todos
     json_response(@todos)
   end
 
