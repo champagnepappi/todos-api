@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Todos API', type: :request do
   #initialize test data
-  let!(:todos) {create_list(:todo, 10)}
+  let(:user) {create(:user)}
+  let!(:todos) {create_list(:todo, 10, created_by: user.id}
   let(:todo_id) {todos.first.id}
 
   #Test suite for GET /todos
