@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Todos API', type: :request do
   #initialize test data
   let(:user) {create(:user)}
-  let!(:todos) {create_list(:todo, 10, created_by: user.id}
+  let!(:todos) {create_list(:todo, 10, created_by: user.id)}
   let(:todo_id) {todos.first.id}
   #authorize request
   let(:headers) { valid_headers  }
