@@ -10,7 +10,7 @@ RSpec.describe 'Todos API', type: :request do
 
   #Test suite for GET /todos
   describe 'GET /todos' do
-    before { get '/todos' }
+    before { get '/todos', params: {}, headers: headers }
 
     it 'returns todos' do
       expect(json).not_to be_empty
@@ -24,7 +24,7 @@ RSpec.describe 'Todos API', type: :request do
 
   #Test suite for GET /todos/:id
   describe 'GET /todos/:id' do
-    before { get "/todos/#{todo_id}" }
+    before { get "/todos/#{todo_id}", params: {}, headers: headers }
 
     context 'when the record exists' do
       it 'returns the todo' do
