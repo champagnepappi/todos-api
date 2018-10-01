@@ -13,6 +13,8 @@ gem 'sqlite3'
 gem 'bcrypt'
 gem 'jwt'
 gem 'active_model_serializers'
+gem 'will_paginate'
+gem 'faker'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
