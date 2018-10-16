@@ -15,6 +15,7 @@ gem 'jwt'
 gem 'active_model_serializers'
 gem 'will_paginate'
 gem 'faker'
+gem 'rubocop', '~> 0.59.2', require: false
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -46,7 +47,6 @@ end
 group :test do
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
-  gem 'faker'
   gem 'database_cleaner'
 end
 
