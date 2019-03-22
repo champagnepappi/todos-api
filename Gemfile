@@ -13,7 +13,7 @@ gem 'active_model_serializers'
 gem 'bcrypt'
 gem 'faker'
 gem 'jwt'
-gem 'rubocop', '~> 0.59.2', require: false
+gem 'rubocop', '~> 0.66.0', require: false
 gem 'sqlite3'
 gem 'will_paginate'
 # Use Puma as the app server
