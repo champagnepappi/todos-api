@@ -13,7 +13,7 @@ gem 'active_model_serializers'
 gem 'bcrypt'
 gem 'faker'
 gem 'jwt'
-gem 'rubocop', '~> 0.75.1', require: false
+gem 'rubocop', '~> 1.7.0', require: false
 gem 'rubocop-performance'
 gem 'sqlite3'
 gem 'will_paginate'
